@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayLens | Discover Their Genius</title>
+    <!-- Google Fonts: Rubik (Headings) and Mulish (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#4A7C64', // Updated: Lighter Green (Was #2F5E48)
+                light: '#65947E',
+                dark: '#335948',
+              },
+              secondary: {
+                DEFAULT: '#E3EDE3', // Updated: Lighter Sage
+                dark: '#C5DAC5',
+              },
+              accent: {
+                DEFAULT: '#E09F7D', // Terracotta/Clay - Warmth, Montessori
+                hover: '#D08A65',
+              },
+              cream: '#FAF9F6', // Slightly lighter cream background
+              surface: '#FFFFFF',
+              dark: '#1A202C', // Text
+            },
+            fontFamily: {
+              heading: ['Rubik', 'sans-serif'],
+              body: ['Mulish', 'sans-serif'],
+            },
+            boxShadow: {
+              'soft': '0 4px 20px -2px rgba(74, 124, 100, 0.08)',
+              'card': '0 10px 30px -5px rgba(74, 124, 100, 0.1)',
+            },
+            borderRadius: {
+              'xl': '1rem',
+              '2xl': '1.5rem',
+              '3xl': '2rem',
+            }
+          },
+        },
+      };
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-cream text-dark font-body antialiased">
+    <div id="root"></div>
+  </body>
+</html>
