@@ -1,0 +1,173 @@
+/* PlayLens Main Stylesheet */
+/* This file separates the CSS styling layer from the React JSX components */
+
+/* Custom Variables and Global Resets */
+:root {
+  --color-primary: #4A7C64;
+  --color-primary-light: #65947E;
+  --color-primary-dark: #335948;
+  --color-secondary: #E3EDE3;
+  --color-secondary-dark: #C5DAC5;
+  --color-accent: #E09F7D;
+  --color-accent-hover: #D08A65;
+  --color-cream: #FAF9F6;
+  --color-surface: #FFFFFF;
+  --color-dark: #1A202C;
+}
+
+/* Base elements */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-dark);
+  font-family: 'Mulish', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary-dark);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-light);
+}
+
+/* Structured Utility Classes to Separate Styling from Markup */
+
+/* 1. Typography & Content Utilities */
+.text-font-heading {
+  font-family: 'Rubik', sans-serif;
+}
+
+.text-font-body {
+  font-family: 'Mulish', sans-serif;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-hero {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* 2. Custom Layout Components */
+.card-premium {
+  background-color: var(--color-surface);
+  border-radius: 1.5rem; /* 24px */
+  border: 1px solid rgba(197, 218, 197, 0.3); /* secondary-dark with low opacity */
+  box-shadow: 0 10px 30px -5px rgba(74, 124, 100, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-premium:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(74, 124, 100, 0.12);
+  border-color: var(--color-secondary-dark);
+}
+
+.card-cream-flat {
+  background-color: var(--color-cream);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.card-cream-flat:hover {
+  border-color: rgba(197, 218, 197, 0.5);
+  box-shadow: 0 4px 20px -2px rgba(74, 124, 100, 0.08);
+}
+
+/* 3. Animation and Micro-interaction Framework */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Micro-interaction Hover Triggers */
+.hover-rotate-soft:hover {
+  transform: rotate(0deg) !important;
+}
+
+.hover-scale-soft {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-scale-soft:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive grid & spacer configurations */
+.section-spacer {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}

@@ -1,102 +1,9 @@
 import React from 'react';
 import { ArrowRight, Check, Search, Brain, BarChart3, Gamepad2, ScanEye, Lightbulb, Route, Sparkles } from 'lucide-react';
 import Button from '../components/UI/Button';
-import { CustomerSegment, FeatureStep, PricingPlan, PricingTier } from '../types';
+import { homeSegments, homeFeatures, homePlans } from './pageConstants';
 
 const Home: React.FC = () => {
-  
-  // Data Definitions
-  const segments: CustomerSegment[] = [
-    {
-      title: "The Extracurricular Optimizer",
-      description: "Stop burning money on trial-and-error classes. Know exactly where your child will thrive before you pay tuition.",
-      iconName: 'BarChart',
-      needs: "Data-driven ROI for education"
-    },
-    {
-      title: "The Hidden Genius Advocate",
-      description: "Your child isn't 'difficult'—they're different. Validate their unique intelligence when standard schools fail to see it.",
-      iconName: 'Brain',
-      needs: "Validation & confidence"
-    },
-    {
-      title: "The Data-Driven Millennial",
-      description: "You track your sleep and health. Why guess with your child's development? Get the longitudinal data you need.",
-      iconName: 'Search',
-      needs: "Objective scientific metrics"
-    }
-  ];
-
-  const features: FeatureStep[] = [
-    {
-      title: "Play Immersive Games",
-      description: "Children explore our scientifically designed digital worlds. No tests, just fun.",
-      iconName: 'Gamepad2'
-    },
-    {
-      title: "Capture Behavioral Data",
-      description: "We guide you to observe specific reactions and decisions during gameplay.",
-      iconName: 'ScanEye'
-    },
-    {
-      title: "AI Analysis",
-      description: "Our engine decodes gameplay patterns into cognitive and emotional insights.",
-      iconName: 'Lightbulb'
-    },
-    {
-      title: "Personalized Path",
-      description: "Receive a tailored roadmap for extracurriculars and learning styles.",
-      iconName: 'Route'
-    }
-  ];
-
-  const pricingPlans: PricingPlan[] = [
-    {
-      id: PricingTier.FREE,
-      name: "The Snapshot",
-      price: "$0",
-      description: "A teaser of their potential. Identify one key strength.",
-      features: [
-        "1 Basic Play Module",
-        "Single Strength Identification",
-        "Basic Profile",
-        "No longitudinal tracking"
-      ],
-      cta: "Try for Free"
-    },
-    {
-      id: PricingTier.OPTIMIZER,
-      name: "The Optimizer",
-      price: "$19.99",
-      period: "/mo",
-      description: "The core GPS for your child's journey. Stop guessing today.",
-      features: [
-        "Full Talent DNA Profile",
-        "Monthly Growth Tracking",
-        "Extracurricular Recommendations",
-        "Deep Dive Cognitive Reports",
-        "Billed annually at $179 (Save 25%)"
-      ],
-      cta: "Start Optimizing",
-      recommended: true
-    },
-    {
-      id: PricingTier.ADVOCATE,
-      name: "The Advocate",
-      price: "$39.99",
-      period: "/mo",
-      description: "Premium insights and community for deep developmental support.",
-      features: [
-        "Everything in Optimizer",
-        "Priority Expert Analysis",
-        "Community Access",
-        "Neurodiverse-specific tools",
-        "Billed annually at $359"
-      ],
-      cta: "Join the Community"
-    }
-  ];
-
   const renderIcon = (name: string, className: string) => {
     switch(name) {
       case 'Search': return <Search className={className} />;
@@ -111,18 +18,18 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full animate-fade-in">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-cream">
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Text Content */}
-            <div className="flex-1 text-center lg:text-left">
+            <div className="flex-1 text-center lg:text-left animate-slide-up">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/30 text-primary-dark font-medium text-sm mb-6">
                 <Sparkles className="w-4 h-4 text-accent" />
                 <span>Real Science. Real Fun. Real Potential.</span>
               </div>
-              <h1 className="text-4xl lg:text-6xl font-heading font-bold text-primary-dark leading-tight mb-6">
+              <h1 className="title-hero text-4xl lg:text-6xl text-primary-dark mb-6">
                 Stop Guessing. <br/>
                 <span className="text-primary">Discover Their Genius</span> <br/>
                 Through Play.
@@ -141,8 +48,8 @@ const Home: React.FC = () => {
             </div>
 
             {/* Hero Image / Visual */}
-            <div className="flex-1 relative w-full max-w-lg lg:max-w-none">
-              <div className="relative rounded-3xl overflow-hidden shadow-card transform rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div className="flex-1 relative w-full max-w-lg lg:max-w-none animate-scale-up">
+              <div className="relative rounded-3xl overflow-hidden shadow-card transform rotate-2 hover-rotate-soft transition-transform duration-500">
                  {/* Placeholder for Hero Image - Highlighting the aesthetic */}
                 <img 
                   src="https://picsum.photos/seed/montessori/800/600" 
@@ -155,7 +62,7 @@ const Home: React.FC = () => {
                       <div className="p-2 bg-accent/10 rounded-lg">
                         <Brain className="w-5 h-5 text-accent" />
                       </div>
-                      <span className="font-heading font-bold text-primary-dark">Insight Detected</span>
+                      <span className="text-font-heading font-bold text-primary-dark">Insight Detected</span>
                     </div>
                     <p className="text-sm text-gray-600">
                       "Naturally anticipates patterns 3 steps ahead."
@@ -175,7 +82,7 @@ const Home: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl lg:text-4xl font-heading font-bold text-primary-dark mb-4">
+            <h2 className="text-3xl lg:text-4xl text-font-heading font-bold text-primary-dark mb-4">
               Are You Missing Their Genius?
             </h2>
             <p className="text-gray-600 text-lg">
@@ -184,15 +91,15 @@ const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {segments.map((segment, index) => (
-              <div key={index} className="bg-cream rounded-2xl p-8 hover:shadow-soft transition-shadow border border-transparent hover:border-secondary/50">
+            {homeSegments.map((segment, index) => (
+              <div key={index} className="card-cream-flat">
                 <div className="w-14 h-14 bg-secondary/40 rounded-xl flex items-center justify-center text-primary-dark mb-6">
                   {renderIcon(segment.iconName, "w-7 h-7")}
                 </div>
-                <h3 className="text-xl font-heading font-bold text-primary-dark mb-3">
+                <h3 className="text-xl text-font-heading font-bold text-primary-dark mb-3">
                   {segment.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
+                <p className="text-gray-600 leading-relaxed mb-4 text-sm">
                   {segment.description}
                 </p>
                 <div className="text-sm font-medium text-accent">
@@ -214,7 +121,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="text-secondary font-medium tracking-wider uppercase text-sm">The Process</span>
-            <h2 className="text-3xl lg:text-4xl font-heading font-bold mt-2">
+            <h2 className="text-3xl lg:text-4xl text-font-heading font-bold mt-2">
               Real Answers, Through Play
             </h2>
           </div>
@@ -223,13 +130,13 @@ const Home: React.FC = () => {
             {/* Connecting Line (Desktop) */}
             <div className="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-white/10 -z-10"></div>
 
-            {features.map((feature, index) => (
+            {homeFeatures.map((feature, index) => (
               <div key={index} className="relative group">
                 <div className="w-24 h-24 bg-primary rounded-2xl border-4 border-primary-dark flex items-center justify-center mx-auto mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300 shadow-xl">
                   {renderIcon(feature.iconName, "w-10 h-10 text-secondary")}
                 </div>
                 <div className="text-center px-4">
-                  <h3 className="text-xl font-heading font-bold mb-2">{feature.title}</h3>
+                  <h3 className="text-xl text-font-heading font-bold mb-2">{feature.title}</h3>
                   <p className="text-gray-300 text-sm">{feature.description}</p>
                 </div>
               </div>
@@ -242,7 +149,7 @@ const Home: React.FC = () => {
       <section id="pricing" className="py-24 bg-secondary/20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl lg:text-4xl font-heading font-bold text-primary-dark mb-4">
+            <h2 className="text-3xl lg:text-4xl text-font-heading font-bold text-primary-dark mb-4">
               Unlock Their World
             </h2>
             <p className="text-gray-600">
@@ -251,13 +158,11 @@ const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
-            {pricingPlans.map((plan) => (
+            {homePlans.map((plan) => (
               <div 
                 key={plan.id} 
-                className={`relative rounded-3xl p-8 transition-all duration-300 ${
-                  plan.recommended 
-                    ? 'bg-white shadow-card border-2 border-primary scale-105 z-10' 
-                    : 'bg-white/60 hover:bg-white border border-gray-100 hover:shadow-lg'
+                className={`card-premium relative p-8 ${
+                  plan.recommended ? 'ring-2 ring-primary scale-105 z-10' : ''
                 }`}
               >
                 {plan.recommended && (
@@ -266,7 +171,7 @@ const Home: React.FC = () => {
                   </div>
                 )}
                 <div className="mb-6">
-                  <h3 className="text-xl font-heading font-bold text-primary-dark">{plan.name}</h3>
+                  <h3 className="text-xl text-font-heading font-bold text-primary-dark">{plan.name}</h3>
                   <div className="flex items-baseline mt-2">
                     <span className="text-4xl font-bold text-dark">{plan.price}</span>
                     {plan.period && <span className="text-gray-500 ml-1">{plan.period}</span>}
@@ -304,7 +209,7 @@ const Home: React.FC = () => {
              <div className="absolute bottom-0 left-0 w-40 h-40 bg-accent opacity-20 rounded-full translate-y-1/3 -translate-x-1/4"></div>
 
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl text-font-heading font-bold text-white mb-6">
                 Ready to Discover Their Genius?
               </h2>
               <p className="text-secondary-dark text-lg mb-8">
@@ -319,9 +224,9 @@ const Home: React.FC = () => {
                       className="w-full px-6 py-4 rounded-full bg-white text-dark placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-accent/50"
                     />
                     <div className="absolute right-2 top-2 bottom-2">
-                      <Button variant="accent" size="sm" className="h-full">
-                        Get Started
-                      </Button>
+                       <Button variant="accent" size="sm" className="h-full">
+                         Get Started
+                       </Button>
                     </div>
                  </div>
               </div>
