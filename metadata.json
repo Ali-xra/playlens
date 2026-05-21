@@ -1,6 +1,8 @@
 {
-  "name": " PlayLens change struct + dash ",
+  "name": "PlayLens",
   "description": "A talent discovery platform that helps parents identify their child's natural genius through play-based assessment and AI analysis.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

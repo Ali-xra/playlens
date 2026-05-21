@@ -108,11 +108,11 @@ const CoachDashboard: React.FC = () => {
     : students.filter(s => s.id === selectedStudentId);
 
   return (
-    <div className="space-y-6 relative">
-      <div className="flex justify-between items-center mb-2">
+    <div className="space-y-6 relative animate-fade-in">
+      <div className="flex justify-between items-center mb-2 animate-slide-up">
          <div>
-          <h1 className="text-2xl font-heading font-bold text-dark">Team Overview</h1>
-          <p className="text-gray-500">Track performance and developmental milestones.</p>
+          <h1 className="text-2xl font-heading font-bold text-dark text-font-heading">Team Overview</h1>
+          <p className="text-gray-500 font-body">Track performance and developmental milestones.</p>
         </div>
         <Button variant="primary" size="sm" onClick={() => setIsAddModalOpen(true)} leftIcon={<Plus className="w-4 h-4" />}>
           Add Student
@@ -127,8 +127,8 @@ const CoachDashboard: React.FC = () => {
       />
 
       {/* KPI Cards - These would update based on selection in a real app */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 animate-scale-up font-body">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-card transition-all">
             <div className="flex items-center gap-3 mb-2">
                 <Users className="text-primary w-5 h-5" />
                 <span className="text-sm font-bold text-gray-500">
@@ -139,14 +139,14 @@ const CoachDashboard: React.FC = () => {
               {selectedStudentId === 'all' ? students.length : '95%'}
             </p>
         </div>
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-card transition-all">
             <div className="flex items-center gap-3 mb-2">
                 <TrendingUp className="text-green-500 w-5 h-5" />
                 <span className="text-sm font-bold text-gray-500">Growth Rate</span>
             </div>
             <p className="text-3xl font-bold text-dark">+15%</p>
         </div>
-         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-card transition-all">
             <div className="flex items-center gap-3 mb-2">
                 <AlertCircle className="text-amber-500 w-5 h-5" />
                 <span className="text-sm font-bold text-gray-500">
@@ -157,7 +157,7 @@ const CoachDashboard: React.FC = () => {
                {selectedStudentId === 'all' ? '3' : '1'}
             </p>
         </div>
-         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-card transition-all">
             <div className="flex items-center gap-3 mb-2">
                 <Calendar className="text-blue-500 w-5 h-5" />
                 <span className="text-sm font-bold text-gray-500">Next Session</span>
@@ -167,9 +167,9 @@ const CoachDashboard: React.FC = () => {
       </div>
 
       {/* Roster Table */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden font-body animate-slide-up">
         <div className="p-6 border-b border-gray-100 flex justify-between items-center">
-            <h3 className="font-bold text-lg text-dark">
+            <h3 className="font-heading font-bold text-lg text-dark text-font-heading">
               {selectedStudentId === 'all' ? 'Full Roster' : 'Student Details'}
             </h3>
         </div>
@@ -188,8 +188,8 @@ const CoachDashboard: React.FC = () => {
                     {displayedStudents.map(student => (
                         <tr key={student.id} className="hover:bg-gray-50">
                             <td className="px-6 py-4 font-bold text-dark flex items-center gap-3">
-                              <img src={student.avatar} className="w-8 h-8 rounded-full bg-gray-100" alt="" />
-                              {student.name}
+                              <img src={student.avatar} className="w-8 h-8 rounded-full bg-gray-100 object-cover" alt="" referrerPolicy="no-referrer" />
+                              <span className="text-font-heading">{student.name}</span>
                             </td>
                             <td className="px-6 py-4">
                               {student.strengths[0] || 'Unassessed'}

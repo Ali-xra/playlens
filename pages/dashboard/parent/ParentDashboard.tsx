@@ -66,24 +66,24 @@ const ParentDashboard: React.FC = () => {
       </div>
 
       {/* Children Overview Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-scale-up">
         {children.map((child) => (
-            <div key={child.id} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 relative group">
+            <div key={child.id} className="card-premium p-6 relative group">
                 <div className="flex items-center gap-6 mb-4">
-                  <img src={child.avatar} alt={child.name} className="w-20 h-20 rounded-full bg-cream" />
+                  <img src={child.avatar} alt={child.name} className="w-20 h-20 rounded-full bg-cream object-cover" referrerPolicy="no-referrer" />
                   <div className="flex-1">
-                      <h3 className="text-xl font-heading font-bold text-dark">{child.name}</h3>
-                      <p className="text-sm text-gray-500 mb-2">{child.age} years old</p>
+                      <h3 className="text-xl font-heading font-bold text-dark text-font-heading">{child.name}</h3>
+                      <p className="text-sm text-gray-500 mb-2 font-body">{child.age} years old</p>
                       <div className="flex flex-wrap gap-2">
                           {child.strengths.map(s => (
-                              <span key={s} className="px-2 py-1 bg-secondary/30 text-primary-dark text-xs font-bold rounded-md">
+                              <span key={s} className="px-2 py-1 bg-secondary/30 text-primary-dark text-xs font-bold rounded-md font-body">
                                   {s}
                               </span>
                           ))}
                       </div>
                   </div>
                 </div>
-                <div className="border-t border-gray-100 pt-4 flex gap-4">
+                <div className="border-t border-gray-100 pt-4 flex gap-4 font-body">
                   <button 
                     onClick={() => handleContactCoach(child)}
                     className="flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-primary transition-colors"
@@ -97,7 +97,7 @@ const ParentDashboard: React.FC = () => {
             </div>
         ))}
          {/* Add Child Placeholder */}
-         <div className="border-2 border-dashed border-gray-200 rounded-2xl flex flex-col items-center justify-center p-6 hover:border-primary/50 hover:bg-gray-50 transition-colors cursor-pointer text-gray-400 hover:text-primary min-h-[180px]">
+         <div className="border-2 border-dashed border-gray-200 rounded-2xl flex flex-col items-center justify-center p-6 hover:border-primary/50 hover:bg-gray-50 transition-colors cursor-pointer text-gray-400 hover:text-primary min-h-[180px] font-body">
             <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center mb-2">
                 <span className="text-2xl font-bold">+</span>
             </div>
@@ -107,12 +107,12 @@ const ParentDashboard: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Recent Insights Feed */}
-        <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+        <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 animate-slide-up">
              <div className="flex items-center justify-between mb-6">
-                <h3 className="font-heading font-bold text-lg text-dark">Recent Insights</h3>
-                <Link to="/dashboard/reports" className="text-primary text-sm font-bold hover:underline">View All</Link>
+                <h3 className="font-heading font-bold text-lg text-dark text-font-heading">Recent Insights</h3>
+                <Link to="/dashboard/reports" className="text-primary text-sm font-bold hover:underline font-body">View All</Link>
              </div>
-             <div className="space-y-6">
+             <div className="space-y-6 font-body">
                 {recentAssessments.map((assessment) => (
                     <div key={assessment.id} className="flex gap-4 group">
                         <div className="mt-1">
@@ -123,7 +123,7 @@ const ParentDashboard: React.FC = () => {
                         <div className="flex-1 pb-6 border-b border-gray-100 last:border-0 last:pb-0">
                             <div className="flex justify-between items-start">
                                 <div>
-                                    <h4 className="font-bold text-dark">{assessment.moduleName} Results</h4>
+                                    <h4 className="font-bold text-dark text-font-heading">{assessment.moduleName} Results</h4>
                                     <p className="text-xs text-gray-500 mb-2">{assessment.date}</p>
                                 </div>
                                 <span className="bg-green-50 text-green-700 px-2 py-1 rounded-lg text-xs font-bold">
@@ -143,12 +143,12 @@ const ParentDashboard: React.FC = () => {
         </div>
 
         {/* Recommended Activities (The "Optimizer" Value) */}
-        <div className="space-y-6">
+        <div className="space-y-6 animate-slide-up">
             <div className="bg-gradient-to-br from-primary to-primary-dark p-6 rounded-2xl text-white shadow-lg shadow-primary/20">
-                <h3 className="font-heading font-bold text-lg mb-2">Talent GPS</h3>
-                <p className="text-sm text-gray-200 mb-6">Based on {activeChild?.name}'s high spatial reasoning score.</p>
+                <h3 className="font-heading font-bold text-lg mb-2 text-font-heading">Talent GPS</h3>
+                <p className="text-sm text-gray-200 mb-6 font-body">Based on {activeChild?.name}'s high spatial reasoning score.</p>
                 
-                <div className="space-y-3">
+                <div className="space-y-3 font-body">
                     {MOCK_RECOMMENDATIONS.slice(0, 2).map(rec => (
                         <div key={rec.id} className="bg-white/10 backdrop-blur-md rounded-xl p-3 border border-white/10 hover:bg-white/20 transition-colors cursor-pointer">
                             <div className="flex justify-between items-start mb-1">
@@ -161,11 +161,11 @@ const ParentDashboard: React.FC = () => {
                             <p className="text-xs text-gray-300 line-clamp-2">{rec.description}</p>
                             <div className="mt-2 flex items-center text-xs text-gray-300">
                                 <MapPin className="w-3 h-3 mr-1" /> {rec.provider}
-                            </div>
+                             </div>
                         </div>
                     ))}
                 </div>
-                <button className="w-full mt-4 py-2 bg-white text-primary-dark font-bold rounded-lg text-sm hover:bg-gray-50 transition-colors">
+                <button className="w-full mt-4 py-2 bg-white text-primary-dark font-bold rounded-lg text-sm hover:bg-gray-50 transition-colors font-body">
                     Find More Activities
                 </button>
             </div>

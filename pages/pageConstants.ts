@@ -200,3 +200,210 @@ export const pricingFaqs: PricingFAQ[] = [
     answer: "Our 'Talent DNA' algorithm has been trained on thousands of behavioral data points. While no tool is perfect, our longitudinal tracking increases accuracy significantly over time."
   }
 ];
+
+// ==========================================
+// 4. FEATURES & BENEFITS CONSTANTS
+// ==========================================
+
+export interface FeatureSectionItem {
+  id: string;
+  title: string;
+  description: string;
+  iconName: 'Gamepad2' | 'ScanEye' | 'Lightbulb' | 'Route';
+  image: string;
+  bullets: string[];
+}
+
+export const featuresList: FeatureSectionItem[] = [
+  {
+    id: 'play-games',
+    title: "Play Immersive Games",
+    description: "Children explore our scientifically designed digital worlds. No stressful tests, just fun challenges that engage their natural curiosity. Our games are designed to trigger specific cognitive responses without the child ever feeling \"evaluated.\"",
+    iconName: 'Gamepad2',
+    image: "https://picsum.photos/seed/feature-games/600/400",
+    bullets: [
+      "Non-intrusive assessment",
+      "Age-adaptive difficulty",
+      "Rich, colorful environments"
+    ]
+  },
+  {
+    id: 'capture-data',
+    title: "Capture Behavioral Data",
+    description: "We guide you to observe specific reactions and decisions during gameplay. The app prompts you to notice things like: Does your child hesitate before acting? Do they prefer patterns or chaos? Do they persist after failure?",
+    iconName: 'ScanEye',
+    image: "https://picsum.photos/seed/feature-observation/600/400",
+    bullets: [
+      "Guided observation prompts",
+      "Simple \"Yes/No\" inputs",
+      "Captures nuance tests miss"
+    ]
+  },
+  {
+    id: 'ai-analysis',
+    title: "AI Analysis & Insights",
+    description: "Our engine decodes gameplay patterns into cognitive and emotional insights. We look for the \"Why\" behind the \"What.\" It's not just about getting the right answer; it's about the thinking process used to get there.",
+    iconName: 'Lightbulb',
+    image: "https://picsum.photos/seed/feature-ai/600/400",
+    bullets: [
+      "Proprietary Talent DNA algorithm",
+      "Comparative benchmarks",
+      "Strengths-based reporting"
+    ]
+  },
+  {
+    id: 'personalized-path',
+    title: "Personalized Path",
+    description: "Receive a tailored roadmap for extracurriculars and learning styles. We stop the guesswork by recommending activities that align with your child's natural inclinations, saving time and money.",
+    iconName: 'Route',
+    image: "https://picsum.photos/seed/feature-path/600/400",
+    bullets: [
+      "Curated activity lists",
+      "Local resource finder",
+      "Long-term growth tracking"
+    ]
+  }
+];
+
+export interface BenefitCardItem {
+  id: string;
+  title: string;
+  description: string;
+  iconName: 'Lock' | 'Zap' | 'Smartphone';
+  colorClassName: string;
+}
+
+export const additionalBenefits: BenefitCardItem[] = [
+  {
+    id: 'privacy',
+    title: "Privacy First",
+    description: "Your child's data is encrypted and anonymized. We never sell personal information.",
+    iconName: 'Lock',
+    colorClassName: 'text-secondary'
+  },
+  {
+    id: 'feedback',
+    title: "Instant Feedback",
+    description: "Get initial insights immediately after the first session. No waiting weeks for results.",
+    iconName: 'Zap',
+    colorClassName: 'text-accent'
+  },
+  {
+    id: 'device',
+    title: "Any Device",
+    description: "PlayLens works on tablets and desktops, making it easy to access anywhere.",
+    iconName: 'Smartphone',
+    colorClassName: 'text-primary-light'
+  }
+];
+
+// ==========================================
+// 5. CONTACT PAGE CONSTANTS
+// ==========================================
+
+export interface ContactInfoItem {
+  id: string;
+  title: string;
+  description: string;
+  value: string;
+  link?: string;
+  iconType: 'Mail' | 'MapPin' | 'Phone';
+}
+
+export const contactDetailsList: ContactInfoItem[] = [
+  {
+    id: 'email',
+    title: "Email Us",
+    description: "Our friendly team is here to help.",
+    value: "hello@playlens.com",
+    link: "mailto:hello@playlens.com",
+    iconType: 'Mail'
+  },
+  {
+    id: 'office',
+    title: "Office",
+    description: "Come say hello at our HQ.",
+    value: "100 Innovation Drive, Tech City, CA 94000",
+    iconType: 'MapPin'
+  },
+  {
+    id: 'phone',
+    title: "Phone",
+    description: "Mon-Fri from 8am to 5pm.",
+    value: "+1 (555) 123-4567",
+    iconType: 'Phone'
+  }
+];
+
+// ==========================================
+// 6. PRIVACY & TERMS CONSTANTS
+// ==========================================
+
+export interface LegalSection {
+  id: string;
+  title: string;
+  content: string;
+  points?: string[];
+}
+
+export const privacySections: LegalSection[] = [
+  {
+    id: 'intro',
+    title: "1. Introduction",
+    content: "Welcome to PlayLens. We are committed to protecting your privacy and ensuring the security of your personal information, especially regarding children's data. This Privacy Policy explains how we collect, use, and safeguard your data."
+  },
+  {
+    id: 'collect',
+    title: "2. Information We Collect",
+    content: "We collect information to provide better services to all our users. This includes:",
+    points: [
+      "Account Information: Name, email address, and payment info when you sign up.",
+      "Child Profiles: Age, interests, and performance data from gameplay.",
+      "Usage Data: How you interact with our platform and services."
+    ]
+  },
+  {
+    id: 'use',
+    title: "3. How We Use Information",
+    content: "We use the data we collect to:",
+    points: [
+      "Provide personalized talent insights and reports.",
+      "Improve our AI algorithms and game design.",
+      "Communicate with you about updates and recommendations."
+    ]
+  },
+  {
+    id: 'security',
+    title: "4. Data Security",
+    content: "We implement robust security measures to protect your data. All sensitive information is encrypted in transit and at rest. We do not sell personal data to third parties."
+  }
+];
+
+export const termsSections: LegalSection[] = [
+  {
+    id: 'accept',
+    title: "1. Acceptance of Terms",
+    content: "By accessing or using PlayLens, you agree to be bound by these Terms of Service. If you disagree with any part of the terms, you may not access the service."
+  },
+  {
+    id: 'license',
+    title: "2. Use of License",
+    content: "PlayLens grants you a limited, non-exclusive, non-transferable license to use our platform for personal, non-commercial use in accordance with these terms."
+  },
+  {
+    id: 'accounts',
+    title: "3. User Accounts",
+    content: "You are responsible for safeguarding the password that you use to access the service and for any activities or actions under your password."
+  },
+  {
+    id: 'disclaimer',
+    title: "4. Disclaimer",
+    content: "PlayLens provides educational insights but is not a medical diagnostic tool. Our reports should not replace professional medical or psychological advice."
+  },
+  {
+    id: 'changes',
+    title: "5. Changes",
+    content: "We reserve the right, at our sole discretion, to modify or replace these Terms at any time. We will try to provide at least 30 days notice prior to any new terms taking effect."
+  }
+];
+
